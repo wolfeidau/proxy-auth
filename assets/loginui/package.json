@@ -1,0 +1,38 @@
+{
+  "name": "loginui",
+  "version": "1.0.0",
+  "description": "Login UI for go-auth.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wolfeidau/go-auth.git"
+  },
+  "keywords": [
+    "golang",
+    "reactjs",
+    "oauth2"
+  ],
+  "author": "Mark Wolfe <mark@wolfe.id.au>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wolfeidau/go-auth/issues"
+  },
+  "homepage": "https://github.com/wolfeidau/go-auth#readme",
+  "devDependencies": {
+    "babel-core": "^6.1.2",
+    "babel-eslint": "^4.1.4",
+    "babel-loader": "^6.0.1",
+    "babel-preset-es2015": "^6.1.2",
+    "babel-preset-react": "^6.1.2",
+    "eslint-plugin-react": "^3.8.0",
+    "file-loader": "^0.8.4",
+    "webpack": "^1.12.3"
+  },
+  "dependencies": {
+    "react": "^0.14.2"
+  }
+}

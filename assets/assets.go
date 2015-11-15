@@ -1,0 +1,3 @@
+package assets
+
+//go:generate go-bindata -prefix loginui/dist/ -pkg assets loginui/dist/...
