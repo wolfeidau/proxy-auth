@@ -33,8 +33,8 @@ type Server struct {
 func NewServer(sessionStore sessions.Store) *Server {
 
 	conf := &oauth2.Config{
-		ClientID:     DefaultGitHubConfig.ClientID,
-		ClientSecret: DefaultGitHubConfig.ClientSecret,
+		ClientID:     defaultGitHubConfig.ClientID,
+		ClientSecret: defaultGitHubConfig.ClientSecret,
 		Scopes:       []string{"user:email"},
 		Endpoint:     github.Endpoint,
 	}

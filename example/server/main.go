@@ -2,6 +2,7 @@ package main
 
 import (
 	"net/http"
+	"os"
 
 	"github.com/gorilla/mux"
 	"github.com/gorilla/sessions"
@@ -9,6 +10,17 @@ import (
 )
 
 func main() {
+
+	// configure the github oauth parameters
+	config := &auth.GitHubConfig{
+		&auth.Config{
+			ClientID:     os.Getenv("GITHUB_CLIENT_ID"),
+			ClientSecret: os.Getenv("GITHUB_CLIENT_SECRET"),
+			CallbackURL:  os.Getenv("GITHUB_CALLBACK_URL"),
+		},
+	}
+	auth.SetGitHubConfig(config)
+
 	// setup a store, in our case one using secure cookies
 	store := sessions.NewCookieStore([]byte("something-very-secret"))
 	s := auth.NewServer(store)

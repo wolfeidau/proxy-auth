@@ -1,7 +1,5 @@
 package auth
 
-import "os"
-
 // Config base authentication configuration
 type Config struct {
 	ClientID     string
@@ -15,14 +13,9 @@ type GitHubConfig struct {
 }
 
 // DefaultGitHubConfig default configuration used if not overridden
-var DefaultGitHubConfig *GitHubConfig
+var defaultGitHubConfig *GitHubConfig
 
-func init() {
-	DefaultGitHubConfig = &GitHubConfig{
-		&Config{
-			ClientID:     os.Getenv("GITHUB_CLIENT_ID"),
-			ClientSecret: os.Getenv("GITHUB_CLIENT_SECRET"),
-			CallbackURL:  os.Getenv("GITHUB_CALLBACK_URL"),
-		},
-	}
+// SetGitHubConfig Override the GitHub oauth configuration
+func SetGitHubConfig(c *GitHubConfig) {
+	defaultGitHubConfig = c
 }
